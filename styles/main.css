@@ -549,36 +549,40 @@ a.logo {
         background-repeat: no-repeat;
         background-position: left top;
 
-        .dot {
-            background-image: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='8' rx='4' fill='%2363FFB3'/%3E%3C/svg%3E%0A");
-            background-position: center center;
-            background-repeat: no-repeat;
-            backdrop-filter: blur(7px);
-            margin: 1px;
-            width: 31px;
-            height: 18px;
-            border-radius: 6px;
-            justify-self: end;
-        }
+        .content {
+            display: grid;
 
-        .message {
-            backdrop-filter: blur(10px);
-            margin-top: 2px;
-            margin-left: 1px;
-            border-radius: 6px;
-            width: 226px;
-            height: 62px;
-            padding-left: 12px;
-            padding-top: 10px;
-            box-sizing: border-box;
-            vertical-align: middle;
+            .dot {
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='8' rx='4' fill='%2363FFB3'/%3E%3C/svg%3E%0A");
+                background-position: center center;
+                background-repeat: no-repeat;
+                backdrop-filter: blur(7px);
+                margin: 1px;
+                width: 31px;
+                height: 18px;
+                border-radius: 6px;
+                justify-self: end;
+            }
 
-            font-family: var(--font-family);
-            font-style: italic;
-            font-weight: 500;
-            font-size: 1.31rem;
-            line-height: 110%;
-            color: var(--secondary-white);
+            .message {
+                backdrop-filter: blur(10px);
+                margin-top: 2px;
+                margin-left: 1px;
+                border-radius: 6px;
+                width: 226px;
+                height: 62px;
+                padding-left: 12px;
+                padding-top: 10px;
+                box-sizing: border-box;
+                vertical-align: middle;
+
+                font-family: var(--font-family);
+                font-style: italic;
+                font-weight: 500;
+                font-size: 1.31rem;
+                line-height: 110%;
+                color: var(--secondary-white);
+            }
         }
 
         @media screen and (max-width: 1440px) {
