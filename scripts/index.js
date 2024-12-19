@@ -172,12 +172,13 @@ function getYandexMaps() {
             // от 0 (весь мир) до 19.
             zoom: 17,
         });
+        const pathPrefix = location.pathname.includes("ross") ? "/ross" : ".";
         var rossPlacemark = new ymaps.Placemark(
             coorinates,
             {},
             {
                 iconLayout: "default#image",
-                iconImageHref: "/ross/img/map-marker.svg",
+                iconImageHref: `${pathPrefix}/img/map-marker.svg`,
                 iconImageSize: [59, 76],
                 iconImageOffset: [-25, -76],
             }

@@ -567,7 +567,7 @@ a.logo {
 
             .message {
                 backdrop-filter: blur(10px);
-                margin-top: 2px;
+                margin-top: 1px;
                 margin-left: 1px;
                 border-radius: 6px;
                 width: 226px;
@@ -1828,6 +1828,7 @@ a.logo {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     gap: 24px;
 
     @media screen and (max-width: 576px) {
@@ -1978,8 +1979,8 @@ a.logo {
     z-index: 100;
     left: 0;
     top: 0;
-    width: 100dvw;
-    height: 100dvh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
