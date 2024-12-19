@@ -553,6 +553,7 @@ a.logo {
             display: grid;
 
             .dot {
+                margin-left: auto;
                 background-image: url("data:image/svg+xml,%3Csvg width='16' height='8' viewBox='0 0 16 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='8' rx='4' fill='%2363FFB3'/%3E%3C/svg%3E%0A");
                 background-position: center center;
                 background-repeat: no-repeat;
@@ -1460,7 +1461,7 @@ a.logo {
 
         .content {
             @media screen and (max-width: 576px) {
-                margin-right: -45px;
+                width: 100%;
             }
         }
 
@@ -1515,7 +1516,6 @@ a.logo {
             padding: 10px 20px 10px 70px;
 
             background-position: 20px center;
-            width: calc(100vw - 20px);
             box-sizing: border-box;
         }
 
