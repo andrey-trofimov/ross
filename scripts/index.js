@@ -177,7 +177,7 @@ function getYandexMaps() {
             {},
             {
                 iconLayout: "default#image",
-                iconImageHref: "../img/map-marker.svg",
+                iconImageHref: "/ross/img/map-marker.svg",
                 iconImageSize: [59, 76],
                 iconImageOffset: [-25, -76],
             }
