@@ -231,11 +231,23 @@ body {
     }
 }
 
-.modal .input.error {
+.input,
+.input:focus {
+    font-size: 16px;
+    border: 1px solid var(--disabled-grey-dark);
+    padding: 16px 12px;
+    margin-top: 4px;
+}
+
+.input::placeholder {
+    color: var(--footnote-color);
+}
+
+.input:not(:placeholder-shown):invalid {
     border-color: var(--state-error);
 }
 
-.modal .input.success {
+.input:not(:placeholder-shown):valid {
     border-color: var(--state-success);
 }
 
@@ -1773,18 +1785,6 @@ a.logo {
         width: 100%;
     }
 
-    .input {
-        font-size: 16px;
-        border: 1px solid var(--disabled-grey-dark);
-        padding: 16px 12px;
-        margin-top: 4px;
-
-        & ::placeholder {
-            font-size: 14px;
-            color: var(--footnote-color);
-        }
-    }
-
     .button {
         width: fit-content;
         margin: 35px auto 0px;
@@ -1846,6 +1846,7 @@ a.logo {
         flex-wrap: wrap;
         gap: 10px;
         width: auto;
+        line-height: normal;
 
         li {
             white-space: nowrap;
@@ -2104,18 +2105,6 @@ a.logo {
         display: flex;
         flex-direction: column;
         width: 100%;
-    }
-
-    .input {
-        font-size: 16px;
-        border: 1px solid var(--disabled-grey-dark);
-        padding: 16px 12px;
-        margin-top: 4px;
-
-        & ::placeholder {
-            font-size: 14px;
-            color: var(--footnote-color);
-        }
     }
 
     .button {

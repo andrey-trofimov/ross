@@ -381,17 +381,19 @@
 
                 <div class="contacts_form">
                     <div class="content">
-                        <form action="sendmail.php" method="post" class="form">
-                            <label for="name" class="label">Ваше имя:</label>
-                            <input type="text" id="name" name="name" placeholder="Данные" required class="input" />
+                        <form name="contactsForm" class="form">
+                            <label for="uName" class="label">Ваше имя:</label>
+                            <input name="uName" type="text" required class="input" placeholder="Иван Иванов" />
 
-                            <label for="email" class="label">Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Ввод" required class="input" />
+                            <label for="uEmail" class="label">Email:</label>
+                            <input type="email" name="uEmail" required class="input" placeholder="mail@exemple.ru" />
 
-                            <label for="phone" class="label">Телефон:</label>
-                            <input type="text" id="phone" name="message" placeholder="Ввод" required class="input" />
+                            <label for="uPhone" class="label">Телефон:</label>
+                            <input name="uPhone" type="tel" required class="input" placeholder="+7 000 000-00-00" />
 
-                            <button type="submit" class="button primary">Получить бесплатную консультацию</button>
+                            <button name="okBtn" type="submit" class="button primary" disabled>
+                                Получить бесплатную консультацию
+                            </button>
                         </form>
 
                         <p class="agreement">
