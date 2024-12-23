@@ -87,10 +87,10 @@ function modalForm(msg, btnLabel) {
 
                 <form name="modalForm" class="form">
                     <label for="uName" class="label">Ваше имя:</label>
-                    <input name="uName" type="text" placeholder="Данные" required class="input" />
+                    <input name="uName" type="text" placeholder="Иван Иванов" required class="input" />
 
                     <label for="uEmail" class="label">Email:</label>
-                    <input type="email" name="uEmail" placeholder="Ввод" required class="input" />
+                    <input type="email" name="uEmail" placeholder="email@exemple.ru" required class="input" />
 
                     <label for="uPhone" class="label">Телефон:</label>
                     <input
