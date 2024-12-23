@@ -42,8 +42,60 @@ function showModal(msg, btnLabel) {
 }
 
 function formService(form) {
+    form.uPhone.addEventListener("input", (event) => setPhoneMask(event));
+    form.uPhone.addEventListener("keydown", (event) => handleKeyPress(event));
+
     form.addEventListener("change", () => (form.okBtn.disabled = !form.checkValidity()));
     form.addEventListener("submit", (event) => sendData(event));
+}
+
+function setPhoneMask(event) {
+    let input = event.target;
+    let value = input.value.replace(/\D/g, "");
+    let formattedValue = "+7 ";
+
+    // Если поле пустое, показываем плейсхолдер
+    if (value.length === 0) {
+        input.value = "";
+        return;
+    }
+
+    // Применяем маску: +7 (XXX) XXX-XX-XX
+    if (value.length > 0 && value[0] !== "7") value = "7" + value;
+    if (value.length > 1) formattedValue += "(" + value.slice(1, 4);
+    if (value.length > 4) formattedValue += ") " + value.slice(4, 7);
+    if (value.length > 7) formattedValue += "-" + value.slice(7, 9);
+    if (value.length > 9) formattedValue += "-" + value.slice(9, 11);
+
+    input.value = formattedValue;
+}
+
+function handleKeyPress(event) {
+    let input = event.target;
+    const cursorPosition = input.selectionStart;
+
+    if (event.key === "Backspace" && cursorPosition === 4 && input.value.length > 4) {
+        setTimeout(() => input.setSelectionRange(cursorPosition, cursorPosition));
+        return;
+    }
+
+    if (event.key === "Backspace" && cursorPosition < 5 && input.value.length < 5) {
+        input.value = "";
+        return;
+    }
+
+    if (event.key === "Backspace") {
+        setTimeout(() => input.setSelectionRange(cursorPosition - 1, cursorPosition - 1));
+        return;
+    }
+
+    if (event.key === "Delete") {
+        setTimeout(() => input.setSelectionRange(cursorPosition, cursorPosition));
+        return;
+    }
+
+    // После ввода нового символа обновляется маска
+    setPhoneMask(event);
 }
 
 async function sendData(event) {
@@ -96,9 +148,10 @@ function modalForm(msg, btnLabel) {
                     <input
                         name="uPhone"
                         type="tel"
-                        placeholder="+7 000 000-00-00"
                         required
                         class="input"
+                        pattern=".{18}"
+                        placeholder="+7 (___) ___-__-__"
                     />
 
                     <button name="okBtn" type="submit" class="button primary" disabled>

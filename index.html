@@ -383,13 +383,35 @@
                     <div class="content">
                         <form name="contactsForm" class="form">
                             <label for="uName" class="label">Ваше имя:</label>
-                            <input name="uName" type="text" required class="input" placeholder="Иван Иванов" />
+                            <input
+                                name="uName"
+                                type="text"
+                                required
+                                class="input"
+                                placeholder="Иван Иванов"
+                                id="uName"
+                            />
 
                             <label for="uEmail" class="label">Email:</label>
-                            <input type="email" name="uEmail" required class="input" placeholder="email@exemple.ru" />
+                            <input
+                                type="email"
+                                name="uEmail"
+                                required
+                                class="input"
+                                placeholder="email@exemple.ru"
+                                id="uEmail"
+                            />
 
                             <label for="uPhone" class="label">Телефон:</label>
-                            <input name="uPhone" type="tel" required class="input" placeholder="+7 000 000-00-00" />
+                            <input
+                                id="uPhone"
+                                name="uPhone"
+                                type="tel"
+                                required
+                                class="input"
+                                pattern=".{18}"
+                                placeholder="+7 (___) ___-__-__"
+                            />
 
                             <button name="okBtn" type="submit" class="button primary" disabled>
                                 Получить бесплатную консультацию

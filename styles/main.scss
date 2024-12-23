@@ -232,11 +232,13 @@ body {
 }
 
 .input,
-.input:focus {
+.input:focus,
+.input:focus-visible {
     font-size: 16px;
     border: 1px solid var(--disabled-grey-dark);
     padding: 16px 12px;
     margin-top: 4px;
+    outline: none;
 }
 
 .input::placeholder {
