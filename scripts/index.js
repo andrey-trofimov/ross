@@ -50,7 +50,7 @@ async function sendData(event) {
     event.preventDefault();
 
     try {
-        const response = await fetch("/script/send_email.php", {
+        const response = await fetch("/ross/script/send_email.php", {
             method: "POST",
             body: new FormData(event.target),
         });
