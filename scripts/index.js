@@ -45,7 +45,7 @@ function formService(form) {
     form.uPhone.addEventListener("input", (event) => setPhoneMask(event));
     form.uPhone.addEventListener("keydown", (event) => handleKeyPress(event));
 
-    form.addEventListener("change", () => (form.okBtn.disabled = !form.checkValidity()));
+    form.addEventListener("input", () => (form.okBtn.disabled = !form.checkValidity()));
     form.addEventListener("submit", (event) => sendData(event));
 }
 
