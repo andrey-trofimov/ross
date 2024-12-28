@@ -465,6 +465,7 @@ a.logo {
 }
 
 .header .phone {
+    appearance: none;
     @media screen and (max-width: 768px) {
         display: none;
         opacity: 0;
