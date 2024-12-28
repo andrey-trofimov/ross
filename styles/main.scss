@@ -457,15 +457,11 @@ a.logo {
     }
 }
 
-.header .phone,
 .phone {
     white-space: nowrap;
-    text-decoration: none;
-    color: inherit;
 }
 
 .header .phone {
-    appearance: none;
     @media screen and (max-width: 768px) {
         display: none;
         opacity: 0;
