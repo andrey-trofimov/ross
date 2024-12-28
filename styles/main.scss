@@ -281,6 +281,7 @@ body {
 
     z-index: 1;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 
     background-color: var(--primary-black-80);
@@ -457,8 +458,11 @@ a.logo {
     }
 }
 
-.phone {
+.phone,
+a.phone {
     white-space: nowrap;
+    text-decoration: none;
+    color: inherit;
 }
 
 .header .phone {
@@ -1701,6 +1705,10 @@ a.logo {
             &:hover {
                 text-decoration: underline;
             }
+        }
+
+        a.phone:hover {
+            text-decoration: none;
         }
     }
 
