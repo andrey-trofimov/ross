@@ -457,6 +457,7 @@ a.logo {
     }
 }
 
+.header .phone,
 .phone {
     white-space: nowrap;
     text-decoration: none;
@@ -1291,6 +1292,16 @@ a.logo {
     @media screen and (max-width: 1280px) {
         margin: 120px calc(-1 * var(--body-p-xl)) 0;
         padding: 100px var(--body-p-xl);
+    }
+
+    @media screen and (max-width: 992px) {
+        margin: 70px calc(-1 * var(--body-p-lg)) 0;
+        padding: 60px var(--body-p-lg);
+    }
+
+    @media screen and (max-width: 768px) {
+        margin: 70px calc(-1 * var(--body-p-md)) 0;
+        padding: 60px var(--body-p-md);
     }
 
     @media screen and (max-width: 576px) {
