@@ -39,6 +39,7 @@ function showModal(msg, btnLabel) {
 
     const form = document.forms.modalForm;
     formService(form);
+    fixBody();
 }
 
 function formService(form) {
@@ -124,10 +125,25 @@ async function sendData(event) {
 function showСonfirmation(msg, isOk = true) {
     document.getElementById("modal").innerHTML = confirmationModal(msg, isOk);
     document.getElementsByClassName("cancel")[0].addEventListener("click", closeModal);
+
+    if ((document.body.style.position !== "fixed")) fixBody();
 }
 
 function closeModal() {
     document.getElementById("modal").innerHTML = "";
+
+    // Когда модальное окно скрыто...
+    const scrollY = document.body.style.top;
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    window.scrollTo(0, parseInt(scrollY || "0") * -1);
+}
+
+function fixBody() {
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.style.position = "fixed";
+    document.body.style.left = `${(window.innerWidth - document.body.clientWidth) / 2}px`;
 }
 
 function modalForm(msg, btnLabel) {
