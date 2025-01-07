@@ -98,12 +98,14 @@
 html {
     background: var(--primary-black);
 
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-
     overflow-x: hidden;
 
     text-wrap: balance;
+}
+
+.smoothScroll {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 .scroll {
@@ -168,6 +170,10 @@ body {
 
     @media screen and (max-width: 576px) {
         padding: 20px 25px;
+    }
+
+    @media screen and (max-width: 768px) {
+        white-space: nowrap;
     }
 
     &:disabled {
@@ -277,8 +283,6 @@ body {
     position: sticky;
     top: 0;
 
-    height: fit-content;
-
     z-index: 1;
     display: flex;
     align-items: center;
@@ -302,6 +306,9 @@ body {
     @media screen and (max-width: 768px) {
         margin: 0 calc(-1 * var(--body-p-lg));
         padding: 20px var(--body-p-lg);
+
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     @media screen and (max-width: 576px) {
@@ -332,8 +339,8 @@ a.logo {
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    width: 100%;
 }
 
 .burger-checkbox {
@@ -341,11 +348,12 @@ a.logo {
     visibility: hidden;
 }
 .burger {
-    position: relative;
+    position: fixed;
+    right: var(--body-p-lg);
+    top: 20px;
     z-index: 1;
     cursor: pointer;
     display: block;
-    position: relative;
     border: none;
     background: transparent;
     min-width: 30px;
@@ -355,6 +363,10 @@ a.logo {
 
     @media screen and (max-width: 768px) {
         height: 30px;
+    }
+
+    @media screen and (max-width: 576px) {
+        right: var(--body-p-sm);
     }
 }
 
@@ -400,9 +412,10 @@ a.logo {
     list-style-type: none;
     color: var(--secondary-white);
 
-    transition: max-height 0.3s, padding 0.3s;
+    transition: max-height 0.3s, padding 0.3s, opacity 0.3s;
 
     display: flex;
+    justify-content: center;
     gap: 0.3rem 40px;
 
     @media screen and (max-width: 992px) {
@@ -415,32 +428,13 @@ a.logo {
     @media screen and (max-width: 768px) {
         max-height: 0;
         overflow: hidden;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        position: absolute;
-        margin-top: 70px;
-        margin-left: calc(-50lvw + var(--body-p-md));
-        padding: 0;
-        top: 0;
-        left: 50vw;
-        width: calc(100lvw - (2 * var(--body-p-md)));
-
-        box-sizing: border-box;
-
-        background-color: var(--primary-black-80);
-        backdrop-filter: blur(7px);
-    }
-
-    @media screen and (max-width: 576px) {
-        margin-left: calc(-50lvw + var(--body-p-sm));
-        width: calc(100lvw - (2 * var(--body-p-sm)));
+        padding-top: 0;
+        opacity: 0;
     }
 }
 
 .nav-item {
-    display: block;
     color: var(--secondary-white);
-    text-align: center;
     text-decoration: none;
 
     transition: 0.3s;
@@ -452,9 +446,11 @@ a.logo {
 
 .burger-checkbox:checked ~ .nav-list {
     max-height: 500px;
+    opacity: 1;
 
     @media screen and (max-width: 768px) {
-        padding: 10px 0;
+        padding-top: 20px;
+
     }
 }
 
@@ -662,7 +658,7 @@ a.phone {
     margin-top: 120px;
 
     @media screen and (max-width: 576px) {
-        margin-top: 70px;
+        margin-top: 90px;
     }
 
     .about {
@@ -1045,7 +1041,7 @@ a.phone {
     margin-top: 120px;
 
     @media screen and (max-width: 576px) {
-        margin-top: 70px;
+        margin-top: 90px;
     }
 
     .title {
@@ -1306,7 +1302,7 @@ a.phone {
     }
 
     @media screen and (max-width: 576px) {
-        margin: 70px calc(-1 * var(--body-p-sm)) 0;
+        margin: 71px calc(-1 * var(--body-p-sm)) 0;
         padding: 60px var(--body-p-sm);
     }
 
@@ -1481,7 +1477,7 @@ a.phone {
     margin-top: 120px;
 
     @media screen and (max-width: 576px) {
-        margin-top: 70px;
+        margin-top: 90px;
     }
 
     .accordion {
@@ -1632,7 +1628,7 @@ a.phone {
     }
 
     @media screen and (max-width: 576px) {
-        margin-top: 70px;
+        margin-top: 90px;
         padding: 60px 12px;
     }
 

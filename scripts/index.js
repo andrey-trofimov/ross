@@ -1,3 +1,4 @@
+const html = document.getElementsByTagName("html")[0];
 const selectorBtnConsult = "#promo .button";
 const selectorBtnPrice = "#service-section .button";
 
@@ -10,6 +11,16 @@ const appText = {
 };
 
 const contactsForm = document.forms.contactsForm;
+
+const navItems = document.querySelectorAll(".header .nav-item");
+const burgerCheckbox = document.getElementById("burger-checkbox");
+
+console.log(navItems);
+navItems.forEach((item) => {
+    item.addEventListener("click", () => {
+        setTimeout(() => (burgerCheckbox.checked = false), 1000);
+    });
+});
 
 accordion();
 main();
@@ -126,7 +137,7 @@ function showСonfirmation(msg, isOk = true) {
     document.getElementById("modal").innerHTML = confirmationModal(msg, isOk);
     document.getElementsByClassName("cancel")[0].addEventListener("click", closeModal);
 
-    if ((document.body.style.position !== "fixed")) fixBody();
+    if (document.body.style.position !== "fixed") fixBody();
 }
 
 function closeModal() {
@@ -134,6 +145,8 @@ function closeModal() {
 
     // Когда модальное окно скрыто...
     const scrollY = document.body.style.top;
+    setTimeout(() => html.classList.toggle("smoothScroll"));
+
     document.body.style.position = "";
     document.body.style.top = "";
     document.body.style.left = "";
@@ -144,6 +157,7 @@ function fixBody() {
     document.body.style.top = `-${window.scrollY}px`;
     document.body.style.position = "fixed";
     document.body.style.left = `${(window.innerWidth - document.body.clientWidth) / 2}px`;
+    html.classList.toggle("smoothScroll");
 }
 
 function modalForm(msg, btnLabel) {
