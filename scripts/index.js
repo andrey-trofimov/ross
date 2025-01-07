@@ -15,7 +15,6 @@ const contactsForm = document.forms.contactsForm;
 const navItems = document.querySelectorAll(".header .nav-item");
 const burgerCheckbox = document.getElementById("burger-checkbox");
 
-console.log(navItems);
 navItems.forEach((item) => {
     item.addEventListener("click", () => {
         setTimeout(() => (burgerCheckbox.checked = false), 1000);
