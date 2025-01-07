@@ -264,7 +264,7 @@ body {
     height: 32px;
 
     @media screen and (max-width: 768px) {
-        height: 12px;
+        height: 75px;
     }
 }
 
@@ -309,11 +309,14 @@ body {
 
         flex-direction: column;
         align-items: flex-start;
+        position: fixed;
+        width: calc(100vw - 2 * var(--body-p-lg) - 10px);
     }
 
     @media screen and (max-width: 576px) {
         margin: 0 calc(-1 * var(--body-p-sm));
         padding: 20px var(--body-p-sm);
+        width: calc(100vw - 2 * var(--body-p-sm));
     }
 }
 
@@ -326,6 +329,7 @@ body {
     color: var(--secondary-white);
 
     display: flex;
+    align-items: center;
     gap: 14px;
 
     svg {
@@ -450,7 +454,6 @@ a.logo {
 
     @media screen and (max-width: 768px) {
         padding-top: 20px;
-
     }
 }
 
