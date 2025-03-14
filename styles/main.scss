@@ -523,13 +523,15 @@ a.phone {
 
     .title_1 {
         --fz-min: 42;
-        --fz-max: 98;
+        --fz-max: 75;
 
         margin-top: 40px;
         font-family: var(--font-family);
         font-weight: 400;
         line-height: 100%;
         color: var(--secondary-white);
+
+        max-width: 65%;
 
         @media screen and (max-width: 320px) {
             --fz-min: 33;
@@ -1335,12 +1337,18 @@ a.phone {
         .primsotsbank,
         .aeroflot,
         .askom,
-        .bubl-gum,
         .snaiper,
         .sollers,
         .vtc,
-        .spectr,
-        .utskovskiy {
+        .era,
+        .vmpr,
+        .svmp,
+        .aqua,
+        .dalzavod,
+        .dvcno,
+        .dalzavod2,
+        .miep,
+        .rosribflot {
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -1378,11 +1386,6 @@ a.phone {
             --logo-base-height: 71;
             background-image: url("../img/logo/askom.png");
         }
-        .bubl-gum {
-            --logo-base-width: 257;
-            --logo-base-height: 80;
-            background-image: url("../img/logo/bublgum.png");
-        }
         .vladmorribport {
             --fz-max: 42;
             --fz-min: 18;
@@ -1398,16 +1401,6 @@ a.phone {
             --logo-base-height: 81;
             background-image: url("../img/logo/sollers.png");
         }
-        .bfg-kredit {
-            --fz-max: 45;
-            --fz-min: 23;
-            font-family: var(--font3);
-        }
-        .vim-tof {
-            --fz-max: 42;
-            --fz-min: 14;
-            font-family: var(--third-family);
-        }
         .hram {
             --fz-max: 45;
             --fz-min: 14;
@@ -1415,51 +1408,55 @@ a.phone {
 
             line-height: 90%;
         }
-        .s-56 {
-            --fz-max: 42;
-            --fz-min: 14;
-            font-family: var(--third-family);
-        }
         .vtc {
             --logo-base-width: 147;
             --logo-base-height: 76;
             background-image: url("../img/logo/vtc.png");
-        }
-        .memorial {
-            --fz-max: 45;
-            --fz-min: 18;
-            font-family: var(--font3);
-            line-height: 90%;
-        }
-        .izumrud {
-            --fz-max: 42;
-            --fz-min: 18;
-            font-family: var(--third-family);
-        }
-        .rosribolovstvov {
-            --fz-max: 45;
-            --fz-min: 18;
-            font-family: var(--third-family);
-        }
-        .tamojennaya {
-            --fz-max: 45;
-            --fz-min: 18;
-            font-family: var(--third-family);
-        }
-        .spectr {
-            --logo-base-width: 200;
-            --logo-base-height: 81;
-            background-image: url("../img/logo/spectr.png");
         }
         .ajur {
             --fz-max: 45;
             --fz-min: 18;
             font-family: var(--font3);
         }
-        .utskovskiy {
-            --logo-base-width: 238;
-            --logo-base-height: 67;
-            background-image: url("../img/logo/utskovskiy.svg");
+        .era {
+            --logo-base-width: 225;
+            --logo-base-height: 75;
+            background-image: url("../img/logo/era.png");
+        }
+        .vmrp {
+            --logo-base-width: 300;
+            --logo-base-height: 85;
+            background-image: url("../img/logo/vmrp.png");
+        }
+        .svmp {
+            --logo-base-width: 231;
+            --logo-base-height: 75;
+            background-image: url("../img/logo/svmp.png");
+        }
+        .aqua {
+            --logo-base-width: 289;
+            --logo-base-height: 73;
+            background-image: url("../img/logo/aqua.png");
+        }
+        .dalzavod {
+            --logo-base-width: 107;
+            --logo-base-height: 85;
+            background-image: url("../img/logo/dalzavod.jpg");
+        }
+        .dvcno {
+            --logo-base-width: 85;
+            --logo-base-height: 85;
+            background-image: url("../img/logo/dvcno.jpg");
+        }
+        .miep {
+            --logo-base-width: 85;
+            --logo-base-height: 85;
+            background-image: url("../img/logo/miep.png");
+        }
+        .rosribflot {
+            --logo-base-width: 87;
+            --logo-base-height: 85;
+            background-image: url("../img/logo/rosribflot.jpg");
         }
 
         @media screen and (max-width: 1280px) {
