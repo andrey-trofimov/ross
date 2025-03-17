@@ -671,10 +671,11 @@ a.phone {
 
         --about-w: 420px;
         --about-h: 380px;
-        --about-g: 15px;
+        --about-g: 30px;
 
         display: grid;
-        grid-template-columns: repeat(2, var(--about-w)) auto;
+        grid-template-columns: repeat(3, 1fr);
+        // grid-template-columns: repeat(2, var(--about-w)) auto;
         grid-template-rows: repeat(3, var(--about-h));
         grid-column-gap: var(--about-g);
         grid-row-gap: var(--about-g);
@@ -756,17 +757,15 @@ a.phone {
             justify-content: space-between;
 
             scroll-snap-align: center;
-        }
 
-        .item3 > .number,
-        .item3 > .h3,
-        .item3 > .p {
             max-width: var(--about-w);
         }
 
         .item6,
+        .item7,
         .item8,
-        .item9 {
+        .item9,
+        .item10 {
             border-radius: 17px;
             background-repeat: no-repeat;
             background-color: var(--accent-green);
@@ -791,36 +790,23 @@ a.phone {
         }
 
         .item7 {
-            position: relative;
+            display: none;
+            opacity: 0;
 
-            > div {
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 100%;
-                aspect-ratio: calc(306 / 275);
-                max-width: 306px;
-                border-radius: 17px;
-
-                background-color: var(--accent-green);
-                /* background-image: url("../img/finger-print.jpg"); */
-                background-image: url("../img/gif.gif");
-                background-position: right top;
+            @media screen and (max-width: 992px) {
+                display: block;
+                opacity: 1;
+                
+                background-image: url("../img/card.jpg");
+                background-position: left bottom;
                 background-size: contain;
                 background-repeat: no-repeat;
-
-                @media screen and (max-width: 576px) {
-                    background: none;
-                }
             }
 
             @media screen and (max-width: 576px) {
                 border-radius: 17px;
                 background-color: var(--accent-green);
-                background-image: url("../img/card-m.jpg");
-                background-position: right bottom;
-                background-size: contain;
-                background-repeat: no-repeat;
+                background-image: url("../img/card.jpg");
             }
         }
 
@@ -833,6 +819,7 @@ a.phone {
                 background-size: contain;
                 background-position: center top;
             }
+
             @media screen and (max-width: 576px) {
                 background-image: url("../img/gear-m.jpg");
                 background-position: right top;
@@ -844,37 +831,18 @@ a.phone {
             background-image: url("../img/card.jpg");
             background-position: left bottom;
 
-            @media screen and (max-width: 576px) {
+            @media screen and (max-width: 992px) {
                 background-image: url("../img/case-m.jpg");
-                background-position: left top;
                 background-size: contain;
+                background-position: center left;
             }
         }
 
         .item10 {
-            position: relative;
-
-            > div {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                aspect-ratio: calc(306 / 275);
-                max-width: 306px;
-                border-radius: 17px;
-                z-index: -1;
-
-                background-color: var(--accent-green);
-                background-image: url("../img/thumb.jpg");
-                background-position: left center;
-                background-size: contain;
-                background-repeat: no-repeat;
-
-                @media screen and (max-width: 576px) {
-                    display: none;
-                    opacity: 0;
-                }
-            }
+            background-image: url("../img/thumb.jpg");
+            background-position: left bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
 
             @media screen and (max-width: 576px) {
                 border-radius: 17px;
@@ -885,6 +853,7 @@ a.phone {
                 background-repeat: no-repeat;
             }
         }
+
         @media screen and (max-width: 1460px) {
             grid-template-columns: repeat(3, 1fr);
         }
@@ -925,6 +894,7 @@ a.phone {
         }
     }
 
+    // Бессрочная лицензия МЧС
     .item1 {
         grid-area: 1 / 1 / 2 / 2;
 
@@ -932,8 +902,9 @@ a.phone {
             grid-area: 1 / 1 / 2 / 2;
         }
     }
+    // 20 лет деятельности
     .item2 {
-        grid-area: 1 / 2 / 2 / 3;
+        grid-area: 1 / 3 / 2 / 4;
 
         @media screen and (max-width: 992px) {
             grid-area: 2 / 2 / 3 / 3;
@@ -943,8 +914,9 @@ a.phone {
             grid-area: 1 / 2 / 2 / 3;
         }
     }
+    // Аккредитация УВД Приморского края
     .item3 {
-        grid-area: 2 / 3 / 3 / 4;
+        grid-area: 2 / 2 / 3 / 3;
 
         @media screen and (max-width: 992px) {
             grid-area: 3 / 1 / 4 / 2;
@@ -954,6 +926,7 @@ a.phone {
             grid-area: 1 / 3 / 2 / 4;
         }
     }
+    // Основной клиентский портфель
     .item4 {
         grid-area: 3 / 1 / 4 / 2;
 
@@ -965,8 +938,9 @@ a.phone {
             grid-area: 1 / 4 / 2 / 5;
         }
     }
+    // Высококлассные специалисты
     .item5 {
-        grid-area: 3 / 2 / 4 / 3;
+        grid-area: 3 / 3 / 4 / 4;
 
         @media screen and (max-width: 992px) {
             grid-area: 5 / 1/ 6 / 2;
@@ -976,8 +950,9 @@ a.phone {
             grid-area: 1 / 5 / 2 / 6;
         }
     }
+    // замок
     .item6 {
-        grid-area: 1 / 3 / 2 / 4;
+        grid-area: 1 / 2 / 2 / 3;
 
         @media screen and (max-width: 992px) {
             grid-area: 1 / 2 / 1 / 3;
@@ -987,9 +962,8 @@ a.phone {
             grid-area: 2 / 1 / 3 / 2;
         }
     }
+    // карта
     .item7 {
-        grid-area: 2 / 1 / 3 / 2;
-
         @media screen and (max-width: 992px) {
             grid-area: 2 / 1 / 3 / 2;
             height: 275px;
@@ -1001,8 +975,9 @@ a.phone {
             max-height: 275px;
         }
     }
+    // шестеренка
     .item8 {
-        grid-area: 2 / 2 / 3 / 3;
+        grid-area: 2 / 3 / 3 / 4;
 
         @media screen and (max-width: 992px) {
             grid-area: 3 / 2 / 4 / 3;
@@ -1013,8 +988,9 @@ a.phone {
             grid-area: 2 / 3 / 3 / 4;
         }
     }
+    // карта | портфель
     .item9 {
-        grid-area: 3 / 3 / 4 / 4;
+        grid-area: 2 / 1 / 3 / 2;
 
         @media screen and (max-width: 992px) {
             grid-area: 5 / 1 / 4 / 2;
@@ -1025,9 +1001,9 @@ a.phone {
             grid-area: 2 / 4 / 3 / 5;
         }
     }
+    // большой палец
     .item10 {
-        display: none;
-        opacity: 0;
+        grid-area: 3 / 2 / 4 / 3;
 
         @media screen and (max-width: 992px) {
             display: block;
