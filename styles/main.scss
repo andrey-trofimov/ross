@@ -670,7 +670,7 @@ a.phone {
         margin-top: 109px;
 
         --about-w: 420px;
-        --about-h: 380px;
+        --about-h: 420px;
         --about-g: 30px;
 
         display: grid;
@@ -680,29 +680,37 @@ a.phone {
         grid-column-gap: var(--about-g);
         grid-row-gap: var(--about-g);
 
-        .number {
+        .number,
+        .number-m {
             --fz-max: 32;
             --fz-min: 32;
 
             font-family: var(--font-family);
             font-weight: 500;
             line-height: 110%;
-            color: var(--secondary-white);
+            color: var(--accent-green);
 
             position: relative;
-
-            // &::after {
-            //     content: '';
-            //     display: block;
-            //     width: fit-content;
-            //     position: absolute;
-            //     right: 10px;
-            //     top: 0;
-            // }
 
             @media screen and (max-width: 1280px) {
                 --fz-max: 32;
                 --fz-min: 28;
+            }
+
+            @media screen and (max-width: 992px) {
+                display: none;
+            }
+        }
+
+        .number-m {
+            display: none;
+
+            @media screen and (max-width: 992px) {
+                display: block;
+            }
+
+            @media screen and (max-width: 576px) {
+                color: var(--secondary-white);
             }
         }
 
@@ -757,6 +765,24 @@ a.phone {
             scroll-snap-align: center;
 
             max-width: var(--about-w);
+
+            border-radius: 17px;
+            border: solid 1px var(--accent-green);
+            padding: 20px;
+            min-height: min-content;
+
+            .number {
+                color: var(--accent-green);
+
+                @media screen and (max-width: 576px) {
+                    color: var(--secondary-white);
+                }
+            }
+
+            @media screen and (max-width: 576px) {
+                border: none;
+                padding: 0;
+            }
         }
 
         .item6,
@@ -767,6 +793,11 @@ a.phone {
             border-radius: 17px;
             background-repeat: no-repeat;
             background-color: var(--accent-green);
+
+            .number {
+                padding: 20px;
+                color: var(--primary-black);
+            }
         }
 
         .item6 {
@@ -794,7 +825,7 @@ a.phone {
             @media screen and (max-width: 992px) {
                 display: block;
                 opacity: 1;
-                
+
                 background-image: url("../img/card.jpg");
                 background-position: left bottom;
                 background-size: contain;
