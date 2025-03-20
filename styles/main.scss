@@ -685,21 +685,20 @@ a.phone {
             --fz-min: 32;
 
             font-family: var(--font-family);
-            font-style: italic;
             font-weight: 500;
             line-height: 110%;
             color: var(--secondary-white);
 
             position: relative;
 
-            &::after {
-                content: "///";
-                display: block;
-                width: fit-content;
-                position: absolute;
-                right: 10px;
-                top: 0;
-            }
+            // &::after {
+            //     content: '';
+            //     display: block;
+            //     width: fit-content;
+            //     position: absolute;
+            //     right: 10px;
+            //     top: 0;
+            // }
 
             @media screen and (max-width: 1280px) {
                 --fz-max: 32;
@@ -712,7 +711,6 @@ a.phone {
             --fz-min: 45;
 
             font-family: var(--font-family);
-            font-style: italic;
             font-weight: 400;
             line-height: 110%;
             letter-spacing: -0.04em;
